@@ -1,15 +1,15 @@
 ---
-title: "Project Two"
-summary: "Lorem ipsum dolor sit amet"
-date: "Mar 17 2022"
+title: "Scoped.fr"
+summary: "Application web qui créer des tournois."
+date: "Janv 2024"
 draft: false
 tags:
-- Svelte
-- Sveltekit
-- Typescript
-- Tailwind
+  - Symfony 7
+  - Api Platform 3
+  - VueJS 3
+demoUrl: https://scoped.fr
+repoUrl: https://github.com/Badyssblt/Tournament
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+Cette application web a été créer pour développer mes connaissances de Symfony et un framework front VueJS.
+J'ai commencé d'abord par créer le backend (en utilisant Postman) avec mes différentes Entity, Controller ect... Pour avoir une vue d'ensemble sur mes données. Le vrai défi de ce projet a été de développer le frontend. En effet, pour maintenant une optique d'API Rest pour mon back, je devais gérer la récupération des données et son stockage. J'ai donc essayé d'intégrer au frontend Pinia, un store assez similaire au Redux de React (mais en plus simple). Cependant, cela n'était pas adapté à mes besoins car en changeant de route, le store se réinitialisait. De plus, une simple approche entre props (passer une variable d'un composant parent au composant enfant) et surtout le passage de données entre composant enfant à son parent, donc l'utilité du context. Après avoir compris ces deux notions, le développement de l'application a été beaucoup plus simple.

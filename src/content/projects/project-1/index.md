@@ -1,16 +1,12 @@
 ---
-title: "Project One"
-summary: "Lorem ipsum dolor sit amet"
-date: "Mar 18 2022"
+title: "Site e-commerce"
+summary: "Site e-commerce réalisé en Symfony 7"
+date: "Mars 2024"
 draft: false
 tags:
-- Astro
-- Javascript
-- Typescript
-- Tailwind
-- SolidJs
-demoUrl: https://astro-sphere-demo.vercel.app
-repoUrl: https://github.com/markhorn-dev/astro-sphere
+  - Symfony 7
+  - Bootstrap
+  - Stripe
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+J'ai réalisé ce site web car je souhaitais développer mes connaissances du framework Symfony du côté "front". C'est à dire, comprendre comment fonctionne twig, la génération de formulaire et le style avec Bootstrap. Une des principales difficultés était la gestion de Stripe API pour réaliser des paiements. Cependant, cela m'a permis de mieux lire une documentation en utilisant les bonnes pratiques.
