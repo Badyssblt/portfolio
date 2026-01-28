@@ -1,68 +1,40 @@
 ---
-title: "Alimify"
-summary: "Application mobile de gestion d'inventaire"
-date: "2024-10-29T23:00:00.000Z"
+title: "Jeu d'automatisation"
+summary: "Jeu vidéo style voxel développé avec Unreal Engine 5"
+date: "2025-01-28T00:00:00.000Z"
 draft: false
 tags:
-  - AdonisJS
-  - Expo
-  - ReactNative
-repoUrl: https://github.com/Badyssblt/ReadMind
+  - Unreal Engine 5
+  - Blueprint
+  - Workbench
+  - Game Development
 ---
 
-Cette application mobile a été développée avec React Native (application mobile) et AdonisJS (serveur). Elle permet de scanner des articles (généralement alimentaires) grâce à leurs codes-barres. Il y a une fonctionnalité d’ajout de courses où l’on peut ajouter les articles relatifs à une liste de courses. Ce projet a été très intéressant, car j’ai appris beaucoup de choses, comme un nouveau framework backend, Adonis, et j’ai pu approfondir ma connaissance de React Native.
+Développement d'un jeu d'automatisation à progression linéaire avec une direction artistique voxel.
 
-La principale difficulté a été de créer un scanner pour récupérer le code-barres d’un article, ce qui permet ensuite d’appeler l’API d’OpenFoodFacts afin de récupérer les informations (images, nom, calories…). L’utilisateur entre ensuite un prix.
+## Réalisations
 
-La découverte d’Adonis m’a permis de comprendre d’autres fonctionnements d’ORM, de routeur, etc. Par exemple, Adonis embarque un système de routage dans un seul fichier (comme Laravel, par exemple), mais je trouve la syntaxe de Symfony plus facile et logique, car en fonction de la taille du projet, on peut rapidement se perdre.
+Le projet a débuté par la création d'un système d'inventaire complet avec gestion des objets ramassables. En parallèle, je crée les assets 3D avec Workbench pour obtenir le style voxel souhaité.
 
-Voici un exemple: 
+## Défis et solutions
 
-```js
-// Groupe pour les aliments
-router
-    .group(() => {
-        router.get('/', [FoodsController, 'index'])
-        router.post('/', [FoodsController, 'create'])
-        router.get('/:id', [FoodsController, 'show'])
-        router.patch('/:id', [FoodsController, 'update'])
-        router.get('/:barCode/course', [FoodsController, 'isInCourse'])
-        router.delete('/:id', [FoodsController, 'delete'])
-    })
-    .prefix('/api/foods')
-```
+### Architecture Blueprint
 
-Si je devais trouver une difficulté pour la réalisation de l’application mobile, ce serait la gestion du scanner avec des problèmes de dépendances avec Expo. J’ai donc décidé d’utiliser Expo Camera en suivant leur documentation, et finalement, cela a été très simple avec l’import de CameraView et l’envoi d’une fonction en props.
+La principale difficulté réside dans la gestion d'une architecture Blueprint qui se complexifie rapidement. Contrairement au développement web où le code texte permet une navigation et un refactoring aisés, le visual scripting demande une rigueur d'organisation dès le départ.
 
-````js
-return (
-    <View style={styles.container}>
-        <CameraView
-            style={StyleSheet.absoluteFillObject}
-            onBarcodeScanned={handleBarCodeScanned}
-        />
-        <View style={styles.scanArea}>
-            <Text style={styles.scanText}>Placez le code-barres ici</Text>
-        </View>
-        {scanned && (
-            <Button title={'Scanner à nouveau'} onPress={() => {
-                setScanned(false);
-                setScannedData(null);
-            }} />
-        )}
-        { priceModal && <Confirmation confirmationTitle={"Quelle est le prix de ce produit ?"}>
-            <View>
-                <TextInput
-                    style={styles.input}
-                    value={price}
-                    onChangeText={setPrice}
-                    keyboardType="numeric"
-                    placeholder="Entrez un nombre"
-                    onSubmitEditing={() => validateChange()}
-                />
-            </View>
+Pour y remédier, j'ai mis en place plusieurs pratiques :
+- **Blueprint Function Library** : centralisation des casts et fonctions utilitaires en fonctions pures pour simplifier leur utilisation à travers le projet
+- **Architecture par Components** : découpage de la logique en composants réutilisables (Inventory, etc.) pour favoriser la modularité et éviter la duplication
+- **Structure de dossiers claire** : organisation rigoureuse des assets et blueprints pour maintenir la lisibilité du projet à mesure qu'il grandit
 
-        </Confirmation>}
-    </View>
-);
-````
+### Animations
+
+Le principal obstacle a été le retargeting des animations. Mes personnages n'étant pas des modèles Mixamo, les outils automatiques d'Unreal Engine produisaient des résultats insatisfaisants. J'ai dû apprendre à retargeter manuellement les squelettes pour obtenir des animations propres, ce qui m'a demandé de comprendre en profondeur le fonctionnement des rigs et du système d'animation d'UE5.
+
+### Création d'assets
+
+L'apprentissage de Workbench pour la création d'assets voxel représente une montée en compétence supplémentaire, en parallèle du développement gameplay.
+
+## Statut
+
+Projet en cours de développement à temps partiel. Pas encore de version jouable publiée.
