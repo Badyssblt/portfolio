@@ -1,6 +1,6 @@
 ---
-title: "Développement d'un jeu vidéo"
-summary: "Développement d'un jeu sur Unreal Engine 5"
+title: "Suite Kite"
+summary: "Suite d'outils pour le développement"
 date: "2025-10-12T23:00:00.000Z"
 draft: false
 tags:
